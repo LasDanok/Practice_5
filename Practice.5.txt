@@ -30,3 +30,42 @@ print(i(input()))
 =====================================================
 5)
 
+def x(p,w):
+    v='aeiouyаоэеиыуёюя'
+    n='bcdfghjklmnpqrstvwxyzбвгджзйклмнпрстфхцчшщ'
+    vcount=ncount=0
+    for letter in w:
+        if(letter.isalpha()):
+            letter=letter.casefold()
+            if(letter in v):
+                vcount+=1
+            else:
+                ncount+=1
+
+    if(p==0):
+        return f'Кл-во гласных: {vcount}'
+    return f'Кл-во согласных: {ncount}'
+
+w=input('Введите слово и будет посчитано количество согласных и гласных: ')
+p=input('Введите символ Г или С, чтобы найти соотвествующие буквы: ')
+if(p=='Г'):
+    p=0
+else:
+    p=1
+print(x(p,w))
+
+============================================================================
+6)
+
+def x(w):
+    count = 0
+    ans=''
+    for i in w:
+        if(count < w.count(i)):
+            count=w.count(i)
+            ans=i
+    return ans
+
+w = input('Word is? ')
+print(x(w))
+
